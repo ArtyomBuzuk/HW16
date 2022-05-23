@@ -7,5 +7,7 @@ data class Worker(
     val id: Int,
     val position: String,
     val payment: Double?,
-    val date: Date = Date()
+    var date: Date = Date()
 )
+
+

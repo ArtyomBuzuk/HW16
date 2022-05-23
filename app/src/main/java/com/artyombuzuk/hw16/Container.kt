@@ -4,12 +4,11 @@ object Container {
     private val listObservers = arrayListOf<Observable>()
     private val list = arrayListOf<Worker>()
 
-    fun addElement(element: Worker) {
+    fun addElement(element: () -> Worker) {
         list.add(element)
         listObservers.forEach {
             it.doOnChanged()
         }
-
     }
 
     fun getAllElements() = list
